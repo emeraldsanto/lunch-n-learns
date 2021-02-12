@@ -25,7 +25,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   --heading-color: #333;
   --heading-line-height: 1.2;
   --heading-letter-spacing: -0.08em;
-  --heading-text-transform: uppercase;
+  --heading-text-transform: none;
   --heading-text-shadow: none;
   --heading-font-weight: normal;
   --heading1-text-shadow: none;
@@ -85,7 +85,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   font-weight: normal;
   line-height: 1.2;
   letter-spacing: -0.08em;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 

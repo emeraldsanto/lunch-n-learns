@@ -21,7 +21,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --heading-color: #fff;
   --heading-line-height: 1.2;
   --heading-letter-spacing: normal;
-  --heading-text-transform: uppercase;
+  --heading-text-transform: none;
   --heading-text-shadow: none;
   --heading-font-weight: 600;
   --heading1-text-shadow: none;
@@ -75,7 +75,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: normal;
-  text-transform: uppercase;
+  text-transform: none;
   text-shadow: none;
   word-wrap: break-word; }
 
