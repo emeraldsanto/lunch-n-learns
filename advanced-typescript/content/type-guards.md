@@ -6,7 +6,7 @@ A better alternative to type casting 💪
 <!-- Section 1 -->
 ##### What is it?
 
-A way to define special functions used to assert that a user defined piece of data conforms to a certain type.
+A way to define special functions used to assert that a piece of data conforms to a certain type.
 
 
 <!-- Section 2 -->

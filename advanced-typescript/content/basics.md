@@ -2,7 +2,7 @@
 
 
 <!-- Section 1 -->
-##### Variables
+##### Defining variables
 
 ```typescript [1-2|4-5]
 // Mutable
@@ -14,7 +14,7 @@ const name = "Yanick";
 
 
 <!-- Section 2 -->
-##### Functions
+##### Defining functions
 
 ```typescript [1-3|5-7]
 const anArrowFunction = (args: Array<string>): void => {
@@ -26,13 +26,9 @@ function aBoundFunction(args: Array<string>): void {
 }
 ```
 
-notes: 
-
-- Arrow functions do not have their own `this` context. They capture the parent scope's `this` instead.
-
 
 <!-- Section 3 -->
-##### Custom types
+##### Defining custom types
 
 ```typescript [1-5|8|13-17]
 type Make =
