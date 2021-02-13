@@ -8,7 +8,7 @@ Some of my favourite TypeScript code snippets ✂️
 
 By default, the `error` parameter of a catch block is typed as `any` but since TypeScript 4.0 (August 2020), we are allowed to explicitly type it as `unknown` which enforces type checking before accessing any properties.
 
-```typescript
+```typescript [2|3|4-8]
 try {
   await somePotentiallyThrowingFunction();
 } catch (error: unknown) {
@@ -26,7 +26,7 @@ try {
 
 By default, all `T[]` and `Array<T>` types will allow empty arrays, but what if you want an array to have at least one element?
 
-```typescript
+```typescript [1|3-4|6-7]
 type NonEmptyArray<T> = [T, ...Array<T>];
 
 // Compilation error!
