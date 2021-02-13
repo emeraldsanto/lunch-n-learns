@@ -6,7 +6,7 @@ This type or that type? 🧐
 <!-- Section 1 -->
 ##### What are they?
 
-TypeScript provides us with a way to run condtions on types, much like the traditional ternary expressions, which are used on values.
+TypeScript provides us with a way to run conditions on types, much like the traditional ternary expressions, which are used on values.
 
 
 <!-- Section 2 -->
@@ -63,19 +63,19 @@ export type MongoOperationResult<
   TModel = any
 > =
   TOperation extends 'aggregate'
-  ? AggregationCursor<DefaultMongoEntity<TModel>>
+  ? AggregationCursor<TModel>
   : TOperation extends 'countDocuments'
   ? number
   : TOperation extends 'findOne'
-  ? DefaultMongoEntity<TModel>
+  ? TModel
   : TOperation extends 'find'
-  ? Cursor<DefaultMongoEntity<TModel>>
+  ? Cursor<TModel>
   : TOperation extends 'findOneAndUpdate'
-  ? FindAndModifyWriteOpResultObject<DefaultMongoEntity<TModel>>
+  ? FindAndModifyWriteOpResultObject<TModel>
   : TOperation extends 'insertOne'
-  ? InsertOneWriteOpResult<DefaultMongoEntity<TModel>>
+  ? InsertOneWriteOpResult<TModel>
   : TOperation extends 'insertMany'
-  ? InsertWriteOpResult<DefaultMongoEntity<TModel>>
+  ? InsertWriteOpResult<TModel>
   : TOperation extends 'updateOne' | 'updateMany'
   ? UpdateWriteOpResult
   : TOperation extends 'deleteOne' | 'deleteMany'
