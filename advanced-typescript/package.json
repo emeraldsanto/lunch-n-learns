@@ -9,7 +9,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp serve",
-    "build": "gulp"
+    "package": "gulp package"
   },
   "author": {
     "name": "Hakim El Hattab",
