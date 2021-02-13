@@ -1,6 +1,6 @@
 #### Template literal types
 
-Autocorrecting strings with types? 📚
+Spellchecking strings using types? 📚
 
 
 <!-- Section 1 -->
@@ -44,7 +44,7 @@ const invalid: UserTag = "EmeraldSanto";
 
 You're building a UI library or framework which exposes CSS classes for all colors and their shade variants. That's gotta be hard to type by hand? Say no more:
 
-```typescript [1-11|13-22|24-27|29-33]
+```typescript [1-11|13-22|24-27|29-30|32-33]
 type ColorName =
   | "black"
   | "blue"

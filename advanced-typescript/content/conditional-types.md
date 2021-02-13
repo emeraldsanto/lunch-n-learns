@@ -44,7 +44,7 @@ const withPromise = maybeWaitFor(Promise.resolve("This is async")); // string
 
 This was once again taken from the Moka API MongoDB wrapper utility and allows us to map MongoDB operation name to its return type.
 
-```typescript [1-12|14-35]
+```typescript [1-12|14-36]
 type MongoOperations =
   | 'aggregate'
   | 'countDocuments'

@@ -6,7 +6,7 @@ Polymorphism for functions 🤔
 <!-- Section 1 -->
 ##### What is it?
 
-It is a for a function to have more than one signature. This allows for different behaviour and type-safe return types depending on the provided arguments.
+It is a way for a function to have more than one signature while maintaining only one implementation. This allows for different behaviour and type-safe return types depending on the provided arguments.
 
 
 <!-- Section 2 -->
@@ -66,20 +66,20 @@ This code was taken from the Moka API MongoDB wrapper utility, it consists of 10
 
 ```typescript [1-16|17-21]
 async function execute<TModel = any>(collection: string, operation: 'aggregate', body: object[], parameters?: CollectionAggregationOptions): Promise<MongoOperationResult<'aggregate', TModel>>;
-async function execute<TModel = any>(collection: string, operation: 'countDocuments', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters?: MongoCountPreferences): Promise<MongoOperationResult<'countDocuments', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'countDocuments', body: FilterQuery<TModel>, parameters?: MongoCountPreferences): Promise<MongoOperationResult<'countDocuments', TModel>>;
 
-async function execute<TModel = any>(collection: string, operation: 'findOne', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters?: FindOneOptions<DefaultMongoEntity<TModel>>): Promise<MongoOperationResult<'findOne', TModel>>;
-async function execute<TModel = any>(collection: string, operation: 'find', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters?: FindOneOptions<DefaultMongoEntity<TModel>>): Promise<MongoOperationResult<'find', TModel>>;
-async function execute<TModel = any>(collection: string, operation: 'findOneAndUpdate', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters: DefaultMongoEntity<TModel> | UpdateQuery<DefaultMongoEntity<TModel>>, options?: FindOneAndUpdateOption<DefaultMongoEntity<TModel>>): Promise<MongoOperationResult<'findOneAndUpdate', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'findOne', body: FilterQuery<TModel>, parameters?: FindOneOptions<TModel>): Promise<MongoOperationResult<'findOne', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'find', body: FilterQuery<TModel>, parameters?: FindOneOptions<TModel>): Promise<MongoOperationResult<'find', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'findOneAndUpdate', body: FilterQuery<TModel>, parameters: TModel | UpdateQuery<TModel>, options?: FindOneAndUpdateOption<TModel>): Promise<MongoOperationResult<'findOneAndUpdate', TModel>>;
 
-async function execute<TModel = any>(collection: string, operation: 'insertOne', body: Omit<DefaultMongoEntity<TModel>, '_id'>, parameters?: CollectionInsertOneOptions): Promise<MongoOperationResult<'insertOne', TModel>>;
-async function execute<TModel = any>(collection: string, operation: 'insertMany', body: Array<Omit<DefaultMongoEntity<TModel>, '_id'>>, parameters?: CollectionInsertManyOptions): Promise<MongoOperationResult<'insertMany', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'insertOne', body: Omit<TModel, '_id'>, parameters?: CollectionInsertOneOptions): Promise<MongoOperationResult<'insertOne', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'insertMany', body: Array<Omit<TModel, '_id'>>, parameters?: CollectionInsertManyOptions): Promise<MongoOperationResult<'insertMany', TModel>>;
 
-async function execute<TModel = any>(collection: string, operation: 'updateOne', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters: UpdateQuery<DefaultMongoEntity<TModel>> | Partial<TModel>, options?: UpdateOneOptions): Promise<MongoOperationResult<'updateOne', TModel>>;
-async function execute<TModel = any>(collection: string, operation: 'updateMany', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters: UpdateQuery<DefaultMongoEntity<TModel>> | Partial<DefaultMongoEntity<TModel>>, options?: UpdateManyOptions): Promise<MongoOperationResult<'updateMany', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'updateOne', body: FilterQuery<TModel>, parameters: UpdateQuery<TModel> | Partial<TModel>, options?: UpdateOneOptions): Promise<MongoOperationResult<'updateOne', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'updateMany', body: FilterQuery<TModel>, parameters: UpdateQuery<TModel> | Partial<TModel>, options?: UpdateManyOptions): Promise<MongoOperationResult<'updateMany', TModel>>;
 
-async function execute<TModel = any>(collection: string, operation: 'deleteOne', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters?: CommonOptions & { bypassDocumentValidation?: boolean }): Promise<MongoOperationResult<'deleteOne', TModel>>;
-async function execute<TModel = any>(collection: string, operation: 'deleteMany', body: FilterQuery<DefaultMongoEntity<TModel>>, parameters?: CommonOptions): Promise<MongoOperationResult<'deleteMany', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'deleteOne', body: FilterQuery<TModel>, parameters?: CommonOptions & { bypassDocumentValidation?: boolean }): Promise<MongoOperationResult<'deleteOne', TModel>>;
+async function execute<TModel = any>(collection: string, operation: 'deleteMany', body: FilterQuery<TModel>, parameters?: CommonOptions): Promise<MongoOperationResult<'deleteMany', TModel>>;
 
 async function execute<TModel = any>(collection: string, operation: MongoOperations, body: unknown, parameters?: unknown, options?: unknown): Promise<unknown> {
   const db = await getInstance();
