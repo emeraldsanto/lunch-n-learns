@@ -51,7 +51,7 @@ function initialize<
 
 const today = initialize(Date);
 
-// All good here, today is an instance of `Date`!
+// All good here, `today` is an instance of `Date`!
 today.getTime();
 ```
 
