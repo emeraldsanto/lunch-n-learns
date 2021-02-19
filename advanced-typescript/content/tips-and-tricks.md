@@ -40,7 +40,7 @@ const full: NonEmptyArray<string> = ["That's nicer!"];
 <!-- Section 3 -->
 ##### Typing class constructor parameter
 
-In some cases, you might want to receive a class constructor as a function parameter, not and instance of the class itself.
+In some cases, you might want to receive a class constructor as a function parameter, not an instance of the class itself.
 
 ```typescript [1-5|7|9-10]
 function initialize<
@@ -53,4 +53,31 @@ const today = initialize(Date);
 
 // All good here, today is an instance of `Date`!
 today.getTime();
+```
+
+
+<!-- Section 4 -->
+##### Typing multiple properties of the same type
+
+TypeScript allows us to use a special syntax to define multiple properties sharing a common type.
+
+- This only works with `type` and not `interface`.
+- It is not possible to define other properties of different types using this syntax.
+
+```typescript [1-3|5-16]
+interface Continent {
+  countries: Array<string>;
+}
+
+type Continents = {
+  [K in
+    | "africa"
+    | "antarctica"
+    | "asia"
+    | "europe"
+    | "northAmerica"
+    | "oceania"
+    | "southAmerica"
+  ]: Continent;
+}
 ```

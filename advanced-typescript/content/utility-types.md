@@ -129,7 +129,7 @@ Returns a new type matching the return value of `T`.
 
 ```typescript [1-3|5-6]
 function create() {
-  return { _id: "some-mongo_id", at: Date.now() }
+  return { _id: "some-id", at: Date.now() }
 };
 
 // This evaluates to { _id: string, at: number }

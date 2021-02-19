@@ -136,6 +136,7 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
 .reveal dl,
 .reveal ul {
   display: inline-block;
+  font-size: 22px;
   text-align: left;
   margin: 0 0 0 1em; }
 

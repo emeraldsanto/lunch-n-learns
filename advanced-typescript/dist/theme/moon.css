@@ -136,6 +136,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
 .reveal dl,
 .reveal ul {
   display: inline-block;
+  font-size: 22px;
   text-align: left;
   margin: 0 0 0 1em; }
 

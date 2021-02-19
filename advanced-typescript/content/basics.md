@@ -17,11 +17,11 @@ const name = "Yanick";
 ##### Defining functions
 
 ```typescript [1-3|5-7]
-const anArrowFunction = (args: Array<string>): void => {
+const anArrowFunction = (...args: Array<string>): void => {
  // Do some work
 }
 
-function aBoundFunction(args: Array<string>): void {
+function aBoundFunction(...args: Array<string>): void {
   // Do some work
 }
 ```
