@@ -25,14 +25,13 @@ const response: APIResponse<User> = await fetchOneUserFromAPI();
 
 // Here, `response.data` is of type `User` 
 console.log(response.username) // works!
-console.log(response.email) // works!
 ```
 
 
 <!-- Section 3 -->
 ##### Type constraints
 
-They allow you to restrict which types can fit into your generics
+They allow you to restrict which types can fit into your generics.
 
 ```typescript[2|1-4|1-6]
 // We only want to allow `APIResponse` and its subtypes in this function
@@ -47,7 +46,7 @@ getData<number>(3); // Error!
 <!-- Section 4 -->
 ##### When should I use them?
 
-They are especially useful for data structures
+They are especially useful for data structures, where your code can handle arbitrary values.
 
 ```typescript[1|2-6|9-10|12-13]
 class Gift<T> {

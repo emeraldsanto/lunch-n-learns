@@ -10,7 +10,7 @@ By default, the `error` parameter of a catch block is typed as `any` but since T
 
 ```typescript [2|3|4-8]
 try {
-  await somePotentiallyThrowingFunction();
+  somePotentiallyThrowingFunction();
 } catch (error: unknown) {
   if (error instanceof Error) {
     console.error(`An error occured - ${error.message}`);
@@ -29,7 +29,7 @@ By default, all `T[]` and `Array<T>` types will allow empty arrays, but what if 
 ```typescript [1|3-4|6-7]
 type NonEmptyArray<T> = [T, ...Array<T>];
 
-// Compilation error!
+// Error!
 const empty: NonEmptyArray<string> = [];
 
 // All good here!

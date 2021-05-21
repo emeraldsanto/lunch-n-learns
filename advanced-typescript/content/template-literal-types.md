@@ -12,7 +12,7 @@ Added in TypeScript 4.1 (November 2020), they are stricter composable string typ
 <!-- Section 2 -->
 ##### What do they look like?
 
-They are just good ol' template strings, except we can now put types in them...
+They are just good ol' template (think string interpolation) strings, except we can now put types in them...
 
 ```typescript
 type Name = "Yanick";
@@ -26,7 +26,7 @@ type NameAndJobTitle = `${Name}, ${JobTitle}`;
 <!-- Section 3 -->
 ##### Why should I use them?
 
-Let's say make sure all user tags match a specific format (username followed by # and four numbers).
+Let's say make sure all user tags match a specific format (username followed by # and digits).
 
 ```typescript [1|3-4|6-7]
 type UserTag = `${string}#${number}`;
@@ -34,7 +34,7 @@ type UserTag = `${string}#${number}`;
 // All good here!
 const valid: UserTag = "EmeraldSanto#1234";
 
-// Compilation error!
+// Error!
 const invalid: UserTag = "EmeraldSanto";
 ```
 
@@ -76,6 +76,6 @@ type Color = `${ColorName}-${ColorShade}`;
 // All good here!
 const niceColor: Color = 'blue-400';
 
-// Compilation error!
+// Error!
 const invalidColor: Color = 'green-1200';
 ```

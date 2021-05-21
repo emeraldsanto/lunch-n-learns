@@ -17,12 +17,12 @@ const name = "Yanick";
 ##### Defining functions
 
 ```typescript [1-3|5-7]
-const anArrowFunction = (...args: Array<string>): void => {
- // Do some work
-}
-
 function aBoundFunction(...args: Array<string>): void {
   // Do some work
+}
+
+const anArrowFunction = (...args: Array<string>): void => {
+ // Do some work
 }
 ```
 
@@ -44,7 +44,7 @@ interface Car {
 }
 
 const myDreamCar: Car = {
-  make: "BMW", // This does not compile.
+  make: "BMW", // Error!
   model: "X5",
   price: 30_000
 }
