@@ -14,6 +14,8 @@ It is a way for a function to have more than one signature while maintaining onl
 
 JavaScript (and therefore TypeScript) does not support proper function overloading as can be seen in other languages such as C# and Java. We can instead use multiple declarations, but only one implementation, to achieve the same effect.
 
+This is being improved with the release of TypeScript 4.3 beta (May 2021) which introduces the `overload` keyword to more easily distinguish between normal and overloaded functions.
+
 
 <!-- Section 3 -->
 ##### The classic approach
