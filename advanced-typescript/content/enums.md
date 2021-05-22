@@ -35,7 +35,7 @@ giveMeAnEnum(Computed.B);
 <!-- Section 4 -->
 ##### `const` enums
 
-There exists a special kind of enum, commonly referred to as `const` enum, which allows us to reduce the overhead that comes from compiling enums to plain JavaScript.
+There exists a special kind of enum, commonly referred to as `const` enum, which allows us to reduce the overhead that comes with compiling enums to plain JavaScript.
 
 *N.B. This is only applicable to enums with exclusively constant members.*
 

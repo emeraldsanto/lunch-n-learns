@@ -49,7 +49,7 @@ function isAdmin(user: ApplicationUser): user is Admin {
 <!-- Section 4 -->
 Then later on...
 
-```typescript [1-8|4-6]
+```typescript [1-8|4-5]
 declare const currentUser: ApplicationUser;
 
 if (isAdmin(currentUser)) {
