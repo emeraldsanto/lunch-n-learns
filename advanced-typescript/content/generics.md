@@ -24,7 +24,7 @@ interface APIResponse<T> {
 const response: APIResponse<User> = await fetchOneUserFromAPI();
 
 // Here, `response.data` is of type `User` 
-console.log(response.username) // works!
+console.log(response.data.username) // works!
 ```
 
 
@@ -33,7 +33,7 @@ console.log(response.username) // works!
 
 They allow you to restrict which types can fit into your generics.
 
-```typescript[2|1-4|1-6]
+```typescript[1-4|1-6]
 // We only want to allow `APIResponse` and its subtypes in this function
 function getData<T extends APIResponse<unknown>>(response: T) {
   return response.data;
