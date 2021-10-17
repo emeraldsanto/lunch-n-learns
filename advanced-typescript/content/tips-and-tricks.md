@@ -57,27 +57,19 @@ today.getTime();
 
 
 <!-- Section 4 -->
-##### Typing multiple properties of the same type
+#### Safely removing multiple object properties
 
-TypeScript allows us to use a special syntax to define multiple properties sharing a common type.
+This is very useful since the usual way of doing this (spread operator) can be cumbersome and results in unused variables (sometimes flagged by `eslint`).
 
-- This only works with `type` and not `interface`.
-- It is not possible to define other properties of different types using this syntax.
-
-```typescript [1-3|5-16]
-interface Continent {
-  countries: Array<string>;
-}
-
-type Continents = {
-  [K in
-    | "africa"
-    | "antarctica"
-    | "asia"
-    | "europe"
-    | "northAmerica"
-    | "oceania"
-    | "southAmerica"
-  ]: Continent;
+```typescript[1-10|2-3|4|5-9]
+export function withoutProperties<
+  TObj extends Record<string, unknown>,
+  TProperties extends keyof TObj
+>(x: TObj, keys: Array<TProperties>): Omit<TObj, TProperties> {
+  return Object.fromEntries(
+    Object.entries(x).filter(
+      ([key]) => !keys.includes(key as TProperties)
+    )
+  ) as Omit<TObj, TProperties>;
 }
 ```
