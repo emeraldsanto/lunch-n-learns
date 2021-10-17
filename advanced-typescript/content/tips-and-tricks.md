@@ -61,7 +61,7 @@ today.getTime();
 
 This is very useful since the usual way of doing this (spread operator) can be cumbersome and results in unused variables (sometimes flagged by `eslint`).
 
-```typescript[1-10|2-3|4|5-9]
+```typescript[1-10|2-3|4|5-9|12-16]
 export function withoutProperties<
   TObj extends Record<string, unknown>,
   TProperties extends keyof TObj
@@ -72,4 +72,10 @@ export function withoutProperties<
     )
   ) as Omit<TObj, TProperties>;
 }
+
+// The inferred type is now `{ age: number, email: string }`
+const trimmed = withoutProperties(
+  { name: 'Yanick', age: 23, email: 'ybelanger@moka.ai' },
+  ['name']
+);
 ```
